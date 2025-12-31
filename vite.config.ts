@@ -9,6 +9,11 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(),wasm()],
+    esbuild:{
+      supported:{
+        'top-level-await':true
+      }
+    },
     define: {
       "import.meta.env.VITE_API_URL": JSON.stringify(env.API_URL),
       "import.meta.env.VITE_WEBSITE_URL": JSON.stringify(env.WEBSITE_URL),

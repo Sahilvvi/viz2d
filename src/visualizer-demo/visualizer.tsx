@@ -1,5 +1,5 @@
 // TextureDemo.tsx
-import React, {
+import {
   useCallback,
   useEffect,
   useRef,
