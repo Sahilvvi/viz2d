@@ -1,30 +1,68 @@
-# React + TypeScript + Vite
+# Vite + React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is built using **Vite** and **React**, with **pnpm** as the package manager.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
 
-## Expanding the ESLint configuration
+Make sure you have the following installed:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Node.js** (v18 or later recommended)
+- **pnpm**
 
-- Configure the top-level `parserOptions` property like this:
+### Install pnpm (if not installed)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm install -g pnpm
+````
+
+---
+
+## Getting Started
+
+### 1. Install dependencies
+
+```bash
+pnpm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+### 2. Start the development server
+
+```bash
+pnpm dev
+```
+
+The app will be available at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Available Scripts
+
+| Command        | Description                          |
+| -------------- | ------------------------------------ |
+| `pnpm dev`     | Start the development server         |
+| `pnpm build`   | Build the app for production         |
+| `pnpm preview` | Preview the production build locally |
+
+---
+
+## Production Build
+
+To create a production build:
+
+```bash
+pnpm build
+```
+
+To preview the production build:
+
+```bash
+pnpm preview
+```
