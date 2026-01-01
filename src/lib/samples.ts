@@ -13,4 +13,15 @@ const viz2dSamples = [
     }
 ]
 
-export default viz2dSamples;
+const textureSamples = [
+    {
+        url:'/assets/samples/textures/1.jpg',
+        scale: 1 // in meters
+    },
+    {
+        url:'/assets/samples/textures/2.jpg',
+        scale: 1
+    }
+]
+
+export {viz2dSamples, textureSamples}

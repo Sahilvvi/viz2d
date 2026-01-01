@@ -2,8 +2,8 @@
 import { useState } from "react"
 import Visualizer from "./visualizer"
 import { Button } from "@/components/ui/button"
-import viz2dSamples from "@/lib/viz2dSamples"
-import { Loader2, Upload } from "lucide-react"
+import {viz2dSamples} from "@/lib/samples"
+import { Loader2,Upload } from "lucide-react"
 
 export default function VisualizerDemo() {
   const [fileState, setFileState] = useState<{ loading: boolean, file?: File }>({
