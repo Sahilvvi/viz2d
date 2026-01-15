@@ -28,31 +28,37 @@ export default function VisualizerDemo() {
       {fileState.loading && <div className="fixed top-0 left-0 w-screen h-screen bg-black text-white text-2xl opacity-50 flex gap-3 items-center justify-center z-50">
         <Loader2 className="animate-spin" />Loading...</div>}
       {fileState.file ? <Visualizer file={fileState.file} /> :
-        <div className="flex flex-col items-center gap-5 my-20">
+        <div className="min-h-screen flex flex-col items-center justify-center gap-5 p-8">
+          <h1 className="text-3xl font-bold mb-4">Viz2d Visualizer</h1>
+          <p className="text-muted-foreground mb-8">Upload a .viz2d file to get started</p>
           <div className="flex gap-5 flex-wrap">
-            <Button asChild>
-              <label htmlFor="fileinput">
+            <Button asChild size="lg">
+              <label htmlFor="fileinput" className="cursor-pointer">
                 <input
                   type="file"
                   accept=".viz2d"
                   id="fileinput"
                   onChange={(e) => { setFileState({ loading: false, file: e.target.files?.[0] }); e.target.value = '' }}
                   className="hidden" />
-                  <Upload/>
+                  <Upload className="mr-2"/>
                 Load Viz2d File
               </label>
             </Button>
           </div>
-          <div>OR</div>
-          <div>
-            <div className="font-semibold mb-4 text-xl text-center">Select from samples</div>
-            <div className="flex gap-5 flex-wrap justify-center">
-              {viz2dSamples.map((sample, index) => (
-                <img key={index} src={sample.image} className="w-80 aspect-video object-cover rounded cursor-pointer hover:scale-105 duration-200"
-                  onClick={() => loadFromUrl(sample.viz2dFile)} />
-              ))}
-            </div>
-          </div>
+          {viz2dSamples.length > 0 && (
+            <>
+              <div className="text-muted-foreground">OR</div>
+              <div>
+                <div className="font-semibold mb-4 text-xl text-center">Select from samples</div>
+                <div className="flex gap-5 flex-wrap justify-center">
+                  {viz2dSamples.map((sample, index) => (
+                    <img key={index} src={sample.image} className="w-80 aspect-video object-cover rounded cursor-pointer hover:scale-105 duration-200"
+                      onClick={() => loadFromUrl(sample.viz2dFile)} />
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       }
     </>

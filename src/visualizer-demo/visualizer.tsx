@@ -179,10 +179,10 @@ const TextureSelector=({open,onOpenChange,onSelect}:{open:boolean,onOpenChange:(
         </DialogHeader>
         <div className="flex flex-wrap justify-center gap-4">
 
-        <label htmlFor="textureinput" className="w-40 h-40 border shadow rounded flex flex-col gap-4 items-center justify-center cursor-pointer font-semibold">
+        <label htmlFor="textureinput" className="w-40 h-40 border shadow rounded flex flex-col gap-4 items-center justify-center cursor-pointer font-semibold hover:bg-accent">
           <input
             type="file"
-            accept=".png,.jpg"
+            accept=".png,.jpg,.jpeg"
             id="textureinput"
             className="hidden"
             onChange={loadInputTexture}
@@ -191,8 +191,8 @@ const TextureSelector=({open,onOpenChange,onSelect}:{open:boolean,onOpenChange:(
           Upload Texture
         </label>
         {
-          textureSamples.map((t,index)=>(
-            <div key={index} className="w-40 h-40 border shadow rounded cursor-pointer" onClick={()=>loadSampleTexture(t.url,t.scale)}>
+          textureSamples.length > 0 && textureSamples.map((t,index)=>(
+            <div key={index} className="w-40 h-40 border shadow rounded cursor-pointer hover:bg-accent" onClick={()=>loadSampleTexture(t.url,t.scale)}>
               <img src={t.url} className="w-full h-full object-contain"/>
               </div>
           ))

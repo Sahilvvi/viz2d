@@ -2,7 +2,9 @@ import VisualizerDemo from "./visualizer-demo"
 
 function App() {
   return (
-    <VisualizerDemo/>
+    <div className="min-h-screen">
+      <VisualizerDemo/>
+    </div>
   )
 }
 
